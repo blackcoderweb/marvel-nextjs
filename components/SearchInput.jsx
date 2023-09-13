@@ -7,8 +7,15 @@ function SearchInput({ pathname }) {
   const router = useRouter();
 
   const [value, setValue] = useState("");
+
   const handleClick = () => {
-    router.push(`${pathname}/search?name=${value}`);
+    router.push(`${pathname}/search?value=${value}`);
+  };
+
+  const handleKeyDown = e => {
+    if(e.key === "Enter"){
+      router.push(`${pathname}/search?value=${value}`);
+    }
   }
 
   return (
@@ -24,16 +31,17 @@ function SearchInput({ pathname }) {
         placeholder="Type to search..."
         value={value}
         onValueChange={setValue}
+        onKeyDown={handleKeyDown}
         size="sm"
         type="search"
       />
       <Button
-      size="sm"
-      color="primary"
-      variant="bordered"
-      onClick={handleClick}
+        size="sm"
+        color="primary"
+        variant="bordered"
+        onClick={handleClick}
       >
-        <SearchIcon size={18}/>
+        <SearchIcon size={18} />
       </Button>
     </NavbarContent>
   );
