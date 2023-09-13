@@ -1,7 +1,19 @@
-
+import Image from 'next/image'
 
 export default function HomePage() {
   return (
-    <h1>HomePage</h1>
-  )
+<div className=''>
+<Image
+        alt="Avengers"
+        src="/marvel1.jpg"
+        quality={100}
+        fill
+        sizes="100vw"
+        style={{
+          objectFit: 'cover',
+        }}
+      />
+</div>
+  );
 }
+

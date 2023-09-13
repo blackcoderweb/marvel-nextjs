@@ -1,29 +1,65 @@
+"use client";
+import Attribution from "@/components/Attribution";
+import RelatedItemsCard from "@/components/RelatedItemsCard";
 import SingleCharacterCard from "@/components/SingleCharacterCard";
+import { Divider } from "@nextui-org/react";
 
-const getCharacter = async (id)=> {
-  const apiKey = process.env.DATA_API_KEY;
-  const hash = process.env.HASH;
+const getCharacterById = async (id) => {
+  const res = await fetch(`http://localhost:3000/api/characters/${id}`);
 
-  const res = await fetch("https://gateway.marvel.com:443/v1/public/characters/"+`${id}`+"?ts=1&apikey=" +
-  `${apiKey}` +
-  "&hash=" +
-  `${hash}`)
-  const data = await res.json()
-  return {
-    character: data.data.results,
-    attribution: data.attributionText,
-  };
-}
+  const data = await res.json();
 
-async function CharacterPage({params}) {
+  return data;
+};
 
-    const {character} = await getCharacter(params.id);
+const getComicsByCharacterId = async (id) => {
+  const res = await fetch(`http://localhost:3000/api/characters/${id}/comics`);
+
+  const data = await res.json();
+
+  return data;
+};
+
+const getEventsByCharacterId = async (id) => {
+  const res = await fetch(`http://localhost:3000/api/characters/${id}/events`);
+
+  const data = await res.json();
+
+  return data;
+};
+
+const getSeriesByCharacterId = async (id) => {
+  const res = await fetch(`http://localhost:3000/api/characters/${id}/serials`);
+
+  const data = await res.json();
+
+  return data;
+};
+
+async function CharacterPage({ params }) {
+  const { character, attribution } = await getCharacterById(params.id);
+  const { characterComics } = await getComicsByCharacterId(params.id);
+  const { characterEvents } = await getEventsByCharacterId(params.id);
+  const { characterSeries } = await getSeriesByCharacterId(params.id);
 
   return (
-    <div className="flex flex-col items-center pt-5">
+    <div className="flex flex-col items-center py-10">
       <SingleCharacterCard character={character} />
+      <Divider className="mt-10" />
+      <div className="flex flex-wrap gap-10 p-10">
+        {characterComics.length > 0 && (
+          <RelatedItemsCard heading="COMICS" list={characterComics} />
+        )}
+        {characterEvents.length > 0 && (
+          <RelatedItemsCard heading="EVENTS" list={characterEvents} />
+        )}
+        {characterSeries.length > 0 && (
+          <RelatedItemsCard heading="SERIES" list={characterSeries} />
+        )}
+      </div>
+      <Attribution attribution={attribution} />
     </div>
-  )
+  );
 }
 
-export default CharacterPage
+export default CharacterPage;

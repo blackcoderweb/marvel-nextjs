@@ -7,10 +7,12 @@ import {
   NavbarContent,
   NavbarMenuToggle,
   NavbarItem,
+  Input,
 } from "@nextui-org/react";
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import SearchInput from "./SearchInput";
 
 function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -51,6 +53,7 @@ function Navigation() {
           </NavbarMenuItem>
         ))}
       </NavbarContent>
+      {pathname !== "/" && <SearchInput pathname={pathname} />}
       <NavbarContent justify="end">
         <NavbarItem>
           <p className="font-bold text-xl text-orange-600">BlackCoder</p>

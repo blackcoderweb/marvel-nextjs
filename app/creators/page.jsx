@@ -1,20 +1,13 @@
+import Attribution from "@/components/Attribution";
 import CreatorCards from "@/components/CreatorCards";
 
 const getCreators = async () => {
-  const apiKey = process.env.DATA_API_KEY;
-  const hash = process.env.HASH;
 
-  const res = await fetch("https://gateway.marvel.com:443/v1/public/creators?limit=100&ts=1&apikey=" +
-  `${apiKey}` +
-  "&hash=" +
-  `${hash}`)
+  const res = await fetch("http://localhost:3000/api/creators");
 
   const data = await res.json()
   
-  return {
-    creators: data.data.results,
-    attribution: data.attributionText
-  };
+  return data
 
 }
 
@@ -25,12 +18,12 @@ async function Creators() {
   return (
     <div className="flex flex-col items-center">
       <h1 className="font-bold text-2xl text-center py-10">CREATORS</h1>
-      <div className="max-w-[1300px] pl-4 pr-4 gap-4 grid grid-cols-2  sm:grid-cols-4">
+      <div className="max-w-[1300px] pl-4 pr-4 gap-4 grid grid-cols-2  sm:grid-cols-5">
         {creators.map((creator) => (
           <CreatorCards creator={creator} key={creator.id} />
         ))}
       </div>
-      <p className="py-10 text-center text-orange-600">{attribution}</p>
+      <Attribution attribution={attribution} />
     </div>
   )
 }
