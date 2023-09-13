@@ -1,6 +1,6 @@
 export const SearchIcon = ({
     size = 24,
-    strokeWidth = 1.5,
+    strokeWidth = 2.5,
     width,
     height,
     ...props

@@ -38,7 +38,7 @@ function SearchInput({ pathname }) {
       <Button
         size="sm"
         color="primary"
-        variant="bordered"
+        variant="ghost"
         onClick={handleClick}
       >
         <SearchIcon size={18} />
