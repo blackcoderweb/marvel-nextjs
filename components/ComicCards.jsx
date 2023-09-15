@@ -2,10 +2,10 @@
 import { Card, CardFooter, CardBody, Image } from "@nextui-org/react";
 import Link from "next/link";
 
-function ComicCards({ comic }) {
+function ComicCards({ item }) {
   return (
     <div className="max-w-[500px]">
-      <Link href={`/comics/${comic.id}`}>
+      <Link href={`/comics/${item.id}`}>
         <Card
           className="w-[100%] h-full pb-10"
           shadow="sm"
@@ -18,13 +18,13 @@ function ComicCards({ comic }) {
               shadow="sm"
               radius="none"
               width="100%"
-              alt={comic.title}
+              alt={item.title}
               className="w-full object-cover h-[300px]"
-              src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
+              src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
             />
           </CardBody>
-          <CardFooter className="text-small justify-between">
-            <b>{comic.title}</b>
+          <CardFooter className="text-small text-left">
+            <b>{item.title}</b>
           </CardFooter>
         </Card>
       </Link>
