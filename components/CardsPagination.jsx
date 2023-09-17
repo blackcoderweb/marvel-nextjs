@@ -16,6 +16,7 @@ function CardsPagination({ totalItems, items }) {
 
   return (
     <>
+    {totalItems > 0 && <>
       <div className="max-w-[1300px] pl-4 pr-4 gap-4 grid grid-cols-2  sm:grid-cols-6">
         {arraySlicer(items, currentPage).map((item) => {
           switch (pathname) {
@@ -28,6 +29,16 @@ function CardsPagination({ totalItems, items }) {
             case "/events":
               return <EventCards item={item} key={item.id} />;
             case "/creators":
+              return <CreatorCards item={item} key={item.id} />;
+            case "/characters/search":
+                return <CharacterCards item={item} key={item.id} />;
+                case "/series/search":
+              return <SerieCards item={item} key={item.id} />;
+            case "/comics/search":
+              return <ComicCards item={item} key={item.id} />;
+            case "/events/search":
+              return <EventCards item={item} key={item.id} />;
+            case "/creators/search":
               return <CreatorCards item={item} key={item.id} />;
             default:
               break;
@@ -64,7 +75,9 @@ function CardsPagination({ totalItems, items }) {
           </Button>
         </div>
       </div>
+    </>}
     </>
+    
   );
 }
 
