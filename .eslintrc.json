@@ -1,8 +1,17 @@
 {
-  "extends": ["next","next/core-web-vitals"],
+  "parserOptions": {
+    
+    "sourceType": "module",
+    "ecmaVersion": "latest"
+},
+"parser": "babel-eslint",
+
+  "extends": "plugin:@next/next/recommended",
   "rules": {
     "react/no-unescaped-entities": "off",
     "@next/next/no-page-custom-font": "off"
   }
 
 }
+
+

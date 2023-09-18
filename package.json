@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@babel/preset-react": "^7.22.15",
     "@nextui-org/react": "^2.1.7",
     "autoprefixer": "10.4.15",
     "eslint": "8.48.0",
@@ -20,6 +21,9 @@
     "tailwindcss": "3.3.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.22.20",
+    "@babel/eslint-parser": "^7.22.15",
+    "babel-eslint": "^10.1.0",
     "eslint-config-next": "^13.4.19"
   }
 }
