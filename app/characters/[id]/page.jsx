@@ -1,8 +1,7 @@
-"use client";
 import Attribution from "@/components/Attribution";
 import RelatedItemsCard from "@/components/RelatedItemsCard";
 import SingleCharacterCard from "@/components/SingleCharacterCard";
-import { Divider } from "@nextui-org/react";
+
 
 const getCharacterById = async (id) => {
   const res = await fetch(`http://localhost:3000/api/characters/${id}`);
@@ -45,7 +44,7 @@ async function CharacterPage({ params }) {
   return (
     <div className="flex flex-col items-center py-10">
       <SingleCharacterCard character={character} />
-      <Divider className="mt-10" />
+     
       <div className="flex flex-wrap gap-10 p-10">
         {characterComics.length > 0 && (
           <RelatedItemsCard heading="COMICS" list={characterComics} />
