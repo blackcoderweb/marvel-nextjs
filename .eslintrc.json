@@ -2,9 +2,15 @@
   "parserOptions": {
     
     "sourceType": "module",
-    "ecmaVersion": "latest"
+    "ecmaVersion": "latest",
+    "requireConfigFile": false,
+    "babelOptions": {
+      "parserOpts": {
+        "plugins": ["jsx"]
+      }
+    }
 },
-"parser": "babel-eslint",
+"parser": "@babel/eslint-parser",
 
   "extends": "plugin:@next/next/recommended",
   "rules": {
