@@ -5,31 +5,31 @@ import SingleComicEventSerie from "@/components/SingleComicEventSerie";
 
 
 const getSerieById = async (id) => {
-  const res = await fetch(`http://localhost:3000/api/serials/${id}`);
+  const res = await fetch(`http://127.0.0.1:3000/api/serials/${id}`);
   const data = await res.json();
   return data;
 };
 
 const getCharactersBySerieId = async (id) => {
-  const res = await fetch(`http://localhost:3000/api/serials/${id}/characters`);
+  const res = await fetch(`http://127.0.0.1:3000/api/serials/${id}/characters`);
   const data = await res.json();
   return data;
 };
 
 const getComicsBySerieId = async (id) => {
-  const res = await fetch(`http://localhost:3000/api/serials/${id}/comics`);
+  const res = await fetch(`http://127.0.0.1:3000/api/serials/${id}/comics`);
   const data = await res.json();
   return data;
 };
 
 const getCreatorsBySerieId = async (id) => {
-  const res = await fetch(`http://localhost:3000/api/serials/${id}/creators`);
+  const res = await fetch(`http://127.0.0.1:3000/api/serials/${id}/creators`);
   const data = await res.json();
   return data;
 };
 
 const getEventsBySerieId = async (id) => {
-  const res = await fetch(`http://localhost:3000/api/serials/${id}/events`);
+  const res = await fetch(`http://127.0.0.1:3000/api/serials/${id}/events`);
   const data = await res.json();
   return data;
 };

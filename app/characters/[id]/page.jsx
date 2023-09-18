@@ -5,7 +5,7 @@ import SingleCharacterCard from "@/components/SingleCharacterCard";
 
 
 const getCharacterById = async (id) => {
-  const res = await fetch(`http://localhost:3000/api/characters/${id}`);
+  const res = await fetch(`http://127.0.0.1:3000/api/characters/${id}`);
 
   const data = await res.json();
 
@@ -13,7 +13,7 @@ const getCharacterById = async (id) => {
 };
 
 const getComicsByCharacterId = async (id) => {
-  const res = await fetch(`http://localhost:3000/api/characters/${id}/comics`);
+  const res = await fetch(`http://127.0.0.1:3000/api/characters/${id}/comics`);
 
   const data = await res.json();
 
@@ -21,7 +21,7 @@ const getComicsByCharacterId = async (id) => {
 };
 
 const getEventsByCharacterId = async (id) => {
-  const res = await fetch(`http://localhost:3000/api/characters/${id}/events`);
+  const res = await fetch(`http://127.0.0.1:3000/api/characters/${id}/events`);
 
   const data = await res.json();
 
@@ -29,7 +29,7 @@ const getEventsByCharacterId = async (id) => {
 };
 
 const getSeriesByCharacterId = async (id) => {
-  const res = await fetch(`http://localhost:3000/api/characters/${id}/serials`);
+  const res = await fetch(`http://127.0.0.1:3000/api/characters/${id}/serials`);
 
   const data = await res.json();
 

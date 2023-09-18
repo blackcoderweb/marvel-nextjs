@@ -3,7 +3,7 @@ import CardsPagination from "@/components/CardsPagination";
 
 const getCharactersByName = async (value) => {
   const res = await fetch(
-    `http://localhost:3000/api/characters/search?value=${value}`
+    `http://127.0.0.1:3000/api/characters/search?value=${value}`
   );
   const data = await res.json();
   return data;

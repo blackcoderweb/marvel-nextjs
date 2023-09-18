@@ -3,7 +3,7 @@ import RelatedItemsCard from "@/components/RelatedItemsCard";
 import SingleCreatorCard from "@/components/SingleCreatorCard";
 
 const getCreatorById = async (id) => {
-  const res = await fetch(`http://localhost:3000/api/creators/${id}`);
+  const res = await fetch(`http://127.0.0.1:3000/api/creators/${id}`);
 
   const data = await res.json();
 
@@ -11,7 +11,7 @@ const getCreatorById = async (id) => {
 };
 
 const getComicsByCreatorId = async (id) => {
-  const res = await fetch(`http://localhost:3000/api/creators/${id}/comics`);
+  const res = await fetch(`http://127.0.0.1:3000/api/creators/${id}/comics`);
 
   const data = await res.json();
 
@@ -19,7 +19,7 @@ const getComicsByCreatorId = async (id) => {
 };
 
 const getEventsByCreatorId = async (id) => {
-  const res = await fetch(`http://localhost:3000/api/creators/${id}/events`);
+  const res = await fetch(`http://127.0.0.1:3000/api/creators/${id}/events`);
 
   const data = await res.json();
 
@@ -27,7 +27,7 @@ const getEventsByCreatorId = async (id) => {
 };
 
 const getSeriesByCreatorId = async (id) => {
-  const res = await fetch(`http://localhost:3000/api/creators/${id}/serials`);
+  const res = await fetch(`http://127.0.0.1:3000/api/creators/${id}/serials`);
 
   const data = await res.json();
 

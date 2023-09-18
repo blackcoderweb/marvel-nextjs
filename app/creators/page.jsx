@@ -1,10 +1,9 @@
 import Attribution from "@/components/Attribution";
 import CardsPagination from "@/components/CardsPagination";
-import CreatorCards from "@/components/CreatorCards";
 
 const getCreators = async () => {
 
-  const res = await fetch("http://localhost:3000/api/creators");
+  const res = await fetch("http://127.0.0.1:3000/api/creators");
 
   const data = await res.json()
   

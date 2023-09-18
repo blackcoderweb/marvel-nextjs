@@ -3,7 +3,7 @@ import CardsPagination from "@/components/CardsPagination";
 
 
 const getSeries = async () => {
-    const res = await fetch("http://localhost:3000/api/serials");
+    const res = await fetch("http://127.0.0.1:3000/api/serials");
     const data = await res.json();
     return data;
 }

@@ -2,7 +2,7 @@ import Attribution from "@/components/Attribution";
 import CardsPagination from "@/components/CardsPagination";
 
 const getComicsByTitle = async (value) => {
-    const res = await fetch(`http://localhost:3000/api/comics/search?value=${value}`);
+    const res = await fetch(`http://127.0.0.1:3000/api/comics/search?value=${value}`);
     const data = await res.json();
     return data;
 }
