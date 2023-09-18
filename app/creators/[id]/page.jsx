@@ -1,15 +1,13 @@
-"use client";
 import Attribution from "@/components/Attribution";
 import RelatedItemsCard from "@/components/RelatedItemsCard";
 import SingleCreatorCard from "@/components/SingleCreatorCard";
-import { Divider } from "@nextui-org/react";
 
 const getCreatorById = async (id) => {
   const res = await fetch(`http://localhost:3000/api/creators/${id}`);
 
   const data = await res.json();
 
-  return data
+  return data;
 };
 
 const getComicsByCreatorId = async (id) => {
@@ -17,7 +15,7 @@ const getComicsByCreatorId = async (id) => {
 
   const data = await res.json();
 
-  return data
+  return data;
 };
 
 const getEventsByCreatorId = async (id) => {
@@ -25,7 +23,7 @@ const getEventsByCreatorId = async (id) => {
 
   const data = await res.json();
 
-  return data
+  return data;
 };
 
 const getSeriesByCreatorId = async (id) => {
@@ -33,10 +31,10 @@ const getSeriesByCreatorId = async (id) => {
 
   const data = await res.json();
 
-  return data
+  return data;
 };
 
-async function CreatorPage({params}) {
+async function CreatorPage({ params }) {
   const { creator, attribution } = await getCreatorById(params.id);
   const { creatorComics } = await getComicsByCreatorId(params.id);
   const { creatorEvents } = await getEventsByCreatorId(params.id);
@@ -45,7 +43,7 @@ async function CreatorPage({params}) {
   return (
     <div className="flex flex-col items-center pt-5">
       <SingleCreatorCard creator={creator} />
-      <Divider className="mt-10" />
+      <hr className="w-[100%] mt-10 border-blue-500" />
       <div className="flex flex-wrap gap-10 p-10">
         {creatorComics.length > 0 && (
           <RelatedItemsCard heading="COMICS" list={creatorComics} />

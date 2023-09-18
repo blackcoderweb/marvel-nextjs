@@ -1,3 +1,4 @@
+
 import Attribution from "@/components/Attribution";
 import RelatedItemsCard from "@/components/RelatedItemsCard";
 import SingleCharacterCard from "@/components/SingleCharacterCard";
@@ -44,7 +45,7 @@ async function CharacterPage({ params }) {
   return (
     <div className="flex flex-col items-center py-10">
       <SingleCharacterCard character={character} />
-     
+      <hr className="w-[100%] mt-10 border-blue-500"/>
       <div className="flex flex-wrap gap-10 p-10">
         {characterComics.length > 0 && (
           <RelatedItemsCard heading="COMICS" list={characterComics} />

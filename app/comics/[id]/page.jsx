@@ -1,8 +1,7 @@
-"use client"
+
 import Attribution from "@/components/Attribution";
 import RelatedItemsCard from "@/components/RelatedItemsCard";
 import SingleComicEventSerie from "@/components/SingleComicEventSerie";
-import { Divider } from "@nextui-org/react";
 
 const getComicById = async (id) => {
   const res = await fetch(
@@ -47,7 +46,7 @@ async function ComicPage({ params }) {
   return (
     <div className="flex flex-col items-center pt-5">
       <SingleComicEventSerie item={comic} />
-      <Divider className="mt-10" />
+      <hr className="w-[100%] mt-10 border-blue-500"/>
       <div className="flex flex-wrap gap-10 p-10">
         {comicCharacters.length > 0 && (
           <RelatedItemsCard heading="CHARACTERS" list={comicCharacters} />
