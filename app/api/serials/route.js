@@ -1,3 +1,4 @@
+import { NextResponse } from 'next/server';
 
 export async function GET() {
   const apiKey = process.env.DATA_API_KEY;
@@ -13,5 +14,5 @@ export async function GET() {
   const data = await res.json();
   const series = data.data.results;
   const attribution = data.attributionText
-  return Response.json({ series, attribution })
+  return NextResponse.json({ series, attribution })
 }
