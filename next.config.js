@@ -1,6 +1,6 @@
-import dns from 'dns';
+const dns = require("dns");
 
-dns.setDefaultResultOrder('ipv4first');
+dns.setDefaultResultOrder("ipv4first")
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {}
