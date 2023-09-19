@@ -6,7 +6,7 @@ const getEvents = async () => {
     `${process.env.NEXT_PUBLIC_BASE_URL_LOCAL}/api/events`
   );
   if (!res.ok) {
-    throw new Error("fetch characters failed");
+    throw new Error("fetch events failed");
   }
   const data = await res.json();
   return data;

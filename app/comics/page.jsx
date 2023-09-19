@@ -6,7 +6,7 @@ const getComics = async () => {
     `${process.env.NEXT_PUBLIC_BASE_URL_LOCAL}/api/comics`
   );
   if (!res.ok) {
-    throw new Error("fetch characters failed");
+    throw new Error("fetch comics failed");
   }
   const data = await res.json();
 

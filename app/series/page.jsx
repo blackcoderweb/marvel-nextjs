@@ -4,7 +4,7 @@ import CardsPagination from "@/components/CardsPagination";
 
 const getSeries = async () => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL_LOCAL}/api/serials`);
-    if (!res.ok) { throw new Error("fetch characters failed") }
+    if (!res.ok) { throw new Error("fetch series failed") }
     const data = await res.json();
     return data;
 }

@@ -6,7 +6,7 @@ const getCreators = async () => {
     `${process.env.NEXT_PUBLIC_BASE_URL_LOCAL}/api/creators`
   );
   if (!res.ok) {
-    throw new Error("fetch characters failed");
+    throw new Error("fetch creators failed");
   }
   const data = await res.json();
 
