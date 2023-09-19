@@ -1,5 +1,6 @@
 import Attribution from "@/components/Attribution";
 import CardsPagination from "@/components/CardsPagination";
+export const dynamic = "force-dynamic";
 
 
 const getSeries = async () => {
