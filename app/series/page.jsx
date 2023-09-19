@@ -3,7 +3,7 @@ import CardsPagination from "@/components/CardsPagination";
 
 
 const getSeries = async () => {
-    const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL_LOCAL+"/api/serials");
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL_LOCAL}/api/serials`);
     const data = await res.json();
     return data;
 }
