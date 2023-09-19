@@ -5,6 +5,7 @@ export const dynamic = 'force-dynamic'
 
 const getCharacters = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL_LOCAL}/api/characters`);
+  if (!res.ok) { throw new Error("fetch characters failed") }
   const data = await res.json();
   return data;
 };
