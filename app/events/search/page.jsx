@@ -3,7 +3,7 @@ import CardsPagination from "@/components/CardsPagination";
 
 
 const getEventsByName = async (value) => {
-    const res = await fetch(`http://127.0.0.1:3000/api/events/search?value=${value}`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL_LOCAL}/api/events/search?value=${value}`);
     const data = await res.json();
     return data;
 }

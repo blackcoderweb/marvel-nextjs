@@ -3,7 +3,7 @@ import CardsPagination from "@/components/CardsPagination";
 
 const getCreators = async () => {
 
-  const res = await fetch("http://127.0.0.1:3000/api/creators");
+  const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL_LOCAL+"/api/creators");
 
   const data = await res.json()
   

@@ -6,31 +6,31 @@ import SingleComicEventSerie from "@/components/SingleComicEventSerie";
 
 
 const getEventById = async (id) => {
-    const res = await fetch(`http://127.0.0.1:3000/api/events/${id}`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL_LOCAL}/api/events/${id}`);
     const data = await res.json();
     return data;
 }
 
 const getCharactersByEventId = async(id) => {
-  const res = await fetch(`http://127.0.0.1:3000/api/events/${id}/characters`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL_LOCAL}/api/events/${id}/characters`);
     const data = await res.json();
     return data;
 }
 
 const getComicsByEventId = async(id) => {
-  const res = await fetch(`http://127.0.0.1:3000/api/events/${id}/comics`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL_LOCAL}/api/events/${id}/comics`);
     const data = await res.json();
     return data;
 }
 
 const getCreatorsByEventId = async(id) => {
-  const res = await fetch(`http://127.0.0.1:3000/api/events/${id}/creators`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL_LOCAL}/api/events/${id}/creators`);
     const data = await res.json();
     return data;
 }
 
 const getSeriesByEventId = async(id) => {
-  const res = await fetch(`http://127.0.0.1:3000/api/events/${id}/serials`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL_LOCAL}/api/events/${id}/serials`);
     const data = await res.json();
     return data;
 }
